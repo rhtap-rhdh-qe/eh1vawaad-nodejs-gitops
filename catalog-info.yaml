@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: eh1vawaad-nodejs-gitops
+  description: This is GitOps manifest for eh1vawaad-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=eh1vawaad-nodejs
+    backstage.io/kubernetes-id: eh1vawaad-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: eh1vawaad-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:eh1vawaad-nodejs
